@@ -1,0 +1,37 @@
+a {
+  text-decoration: none;
+}
+
+.custom-scroll {
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.dark-color {
+  background-color: #272727;
+}
+
+.border-1 {
+  border: 1px solid #272727;
+  border-radius: 15px;
+}
+
+.gradient-transp {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
