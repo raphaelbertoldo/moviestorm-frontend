@@ -8,7 +8,6 @@
     <v-row class="mt-4 d-flex">
       <v-col class="" cols="3">
         <v-list class="transparent">
-          {{ component }}
           <v-list-item
             v-for="(item, index) in items"
             :key="index"

@@ -15,13 +15,7 @@ const apolloProvider = createProvider();
 
 new Vue({
   apolloProvider,
-
-  // apolloProvider: createProvider().then(console.log("asdadsa")),
-
-  // vuetify,
-
   router,
-
   store,
   vuetify,
   render: (h) => h(App),

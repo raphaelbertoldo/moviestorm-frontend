@@ -49,13 +49,18 @@
                     {{ movie.node ? movie.node.title : movie.title }}
                   </p>
                   <div v-if="activeMovie === m" class="pa-2 d-flex mt-n4 flex">
-                    <p class="primary rounded-lg pa-1" style="font-size: 10pt">
+                    <p
+                      class="primary rounded-lg pa-1 font-weight-medium"
+                      style="font-size: 10pt; color: black"
+                    >
                       {{
                         movie.node ? movie.node.genre.name : movie.genre.name
                       }}
                     </p>
                     <v-spacer></v-spacer>
-                    <p>{{ movie.node ? movie.node.year : movie.year }}</p>
+                    <p>
+                      {{ movie.node ? movie.node.year : movie.year }}
+                    </p>
                   </div>
                   <RateMovie
                     :loading="loading"

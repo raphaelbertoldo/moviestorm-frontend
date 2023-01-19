@@ -2,7 +2,13 @@
   <div>
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-icon v-bind="attrs" v-on="on">mdi-menu</v-icon>
+        <v-icon
+          color="black"
+          class="primary pa-1 border-1"
+          v-bind="attrs"
+          v-on="on"
+          >mdi-menu</v-icon
+        >
       </template>
       <v-list>
         <v-list-item v-for="(item, index) in genres" :key="index">

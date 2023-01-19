@@ -1,15 +1,15 @@
 <template>
   <v-app dark>
-    <v-app-bar app dark v-if="this.appBar === true">
+    <v-app-bar app class="black-gradient" v-if="this.appBar === true">
       <div class="flex d-flex justify-space-between">
         <div class="d-flex align-center">
           <router-link to="/">
-            <v-icon class="mr-4">mdi-home</v-icon>
+            <v-icon color="primary" class="mr-4">mdi-home</v-icon>
           </router-link>
         </div>
         <div class="d-flex align-center">
           <genre-list />
-          <v-text-field
+          <!-- <v-text-field
             :label="'Buscar filme'"
             hide-details
             outlined
@@ -17,13 +17,14 @@
             append-icon="mdi-magnify"
             color="primary"
             class="black ml-2"
-          />
+          /> -->
+          <search-container />
         </div>
         <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
             <div class="d-flex align-center">
               <v-icon
-                dark
+                color="primary"
                 v-bind="attrs"
                 v-on="on"
                 class="v-menu__activator--flat"
@@ -52,8 +53,9 @@
 
 <script>
 import GenreList from "./components/GenreList.vue";
+import SearchContainer from "./components/SearchContainer.vue";
 export default {
-  components: { GenreList },
+  components: { GenreList, SearchContainer },
   name: "App",
 
   data: () => ({

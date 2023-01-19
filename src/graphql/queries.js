@@ -99,3 +99,17 @@ export const GET_GENRES = gql`
     }
   }
 `;
+
+export const SEARCH_MOVIE = gql`
+  query FuzzySearchMovies($title: String!, $limit: Int) {
+    fuzzySearchMovies(title: $title, limit: $limit) {
+      id
+      genre {
+        name
+      }
+      title
+      poster
+      year
+    }
+  }
+`;

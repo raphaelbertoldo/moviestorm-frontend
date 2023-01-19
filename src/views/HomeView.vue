@@ -2,32 +2,35 @@
   <div v-if="loading" class="d-flex justify-center mt-16">
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
-  <v-container v-else dark class="">
-    <div v-if="user && user.rateds.length > 0">
-      <SlipMovies
-        @getUser="getUser"
-        :movies="user ? user.ratedsConnection.edges : ''"
-        title="Filmes Favoritos"
-        :type="'favorites'"
-      />
-    </div>
-    <div class="mt-6" v-if="user && user.recommendedMovies.length > 0">
-      <SlipMovies
-        @getUser="getUser"
-        :movies="user ? user.recommendedMovies : ''"
-        title="Filmes Recomendados"
-      />
-    </div>
-    <div class="mt-6" v-if="movies">
-      <SlipMovies
-        @getUser="getUser"
-        @getMovies="getMovies"
-        :movies="movies"
-        title="Adicionados recentemente"
-        type="AddedRecently"
-      />
-    </div>
-  </v-container>
+  <div v-else>
+    asdadsa
+    <v-container dark class="">
+      <div v-if="user && user.rateds.length > 0">
+        <SlipMovies
+          @getUser="getUser"
+          :movies="user ? user.ratedsConnection.edges : ''"
+          title="Filmes Favoritos"
+          :type="'favorites'"
+        />
+      </div>
+      <div class="mt-6" v-if="user && user.recommendedMovies.length > 0">
+        <SlipMovies
+          @getUser="getUser"
+          :movies="user ? user.recommendedMovies : ''"
+          title="Filmes Recomendados"
+        />
+      </div>
+      <div class="mt-6" v-if="movies">
+        <SlipMovies
+          @getUser="getUser"
+          @getMovies="getMovies"
+          :movies="movies"
+          title="Adicionados recentemente"
+          type="AddedRecently"
+        />
+      </div>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -126,7 +129,7 @@ export default {
   },
   watch: {
     $route: function () {
-      // this.getMovies();
+      this.getMovies();
       // this.getUser();
     },
     movies: function () {
