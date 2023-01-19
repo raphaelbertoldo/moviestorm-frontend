@@ -9,15 +9,7 @@
         </div>
         <div class="d-flex align-center">
           <genre-list />
-          <!-- <v-text-field
-            :label="'Buscar filme'"
-            hide-details
-            outlined
-            dense
-            append-icon="mdi-magnify"
-            color="primary"
-            class="black ml-2"
-          /> -->
+
           <search-container />
         </div>
         <v-menu offset-y>

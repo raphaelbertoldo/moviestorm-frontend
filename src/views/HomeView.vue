@@ -3,7 +3,6 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
   <div v-else>
-    asdadsa
     <v-container dark class="">
       <div v-if="user && user.rateds.length > 0">
         <SlipMovies
