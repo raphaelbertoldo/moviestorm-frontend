@@ -5,13 +5,12 @@
       full-icon="mdi-star"
       half-icon=" mdi-star-half-full"
       length="5"
-      size="20"
+      :size="size || 20 "
       color="yellow"
       background-color="grey darken-3"
       v-model="rating"
     >
     </v-rating>
-
     {{ rating }}
   </div>
 </template>
@@ -19,7 +18,7 @@
 <script>
 export default {
   name: "RateMovie",
-  props: ["movie", "loading"],
+  props: ["movie", "loading", "size"],
   data() {
     return {
       rating: this.movie.rating ? this.movie.rating : this.newRating,
@@ -45,5 +44,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

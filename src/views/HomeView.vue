@@ -99,21 +99,33 @@ export default {
         });
     },
     getUser() {
-      console.log("getUser");
-      this.$apollo
-        .query({
-          query: GET_USER,
-          variables: {
+        console.log("getUser");
+        this.$apollo
+          .query({
+            query: GET_USER,
+            variables: {
             username: localStorage.user,
             where: {
               username: localStorage.user,
             },
           },
           fetchPolicy: "network-only",
-        })
+          update: (store) => {
+        store.writeQuery({ 
+          query: GET_USER,
+          variables: {
+            username: localStorage.user,
+            where: {
+              username: localStorage.user,
+            },
+          },})
+      },
+
+        }) 
         .then(({ data }) => {
           this.getMovies();
           this.user = data.users[0];
+         console.log( this.$apollo)
         });
     },
   },

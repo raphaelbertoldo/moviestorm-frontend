@@ -37,9 +37,11 @@ export default {
             },
           },
         })
+        // this.movies = data.genres[0].movies;
         .then(({ data }) => {
           data;
-          console.log("🚀 ~ file: GenrePage.vue:61 ~ .then ~ data", data)
+          console.log("🚀 ~ file: GenrePage.vue:41 ~ .then ~ data", data)
+          this.genre = data.genres[0].name.toLowerCase();
 
           if (this.user) {
             this.movies = data.genres[0].movies.map((movie) => {
@@ -61,7 +63,6 @@ export default {
         });
     },
     getUser() {
-        console.log("getUser");
         this.$apollo
           .query({
             query: GET_USER,
@@ -71,23 +72,11 @@ export default {
               username: localStorage.user,
             },
           },
-          fetchPolicy: "network-only",
-          update: (store) => {
-        store.writeQuery({ 
-          query: GET_USER,
-          variables: {
-            username: localStorage.user,
-            where: {
-              username: localStorage.user,
-            },
-          },})
-      },
-
-        }) 
+          fetchPolicy:  'cache-first'
+        })  
         .then(({ data }) => {
-          this.getMovies();
           this.user = data.users[0];
-         console.log( this.$apollo)
+          this.getMovies();
         });
     },
   },
