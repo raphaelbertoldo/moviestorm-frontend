@@ -13,20 +13,20 @@
       <v-progress-circular indeterminate color="primary"></v-progress-circular>
     </div>
     <div v-else class="pa-4 border-lg border-1">
-      <div class="d-flex">
+      <div class="d-flex my-2">
         <v-img
           :src="
             movie
               ? movie.poster
               : 'https://media.comicbook.com/files/img/default-movie.png?auto=webp'
           "
-          max-width="266px"
-          min-width="266px"
+          max-width="300px"
+          min-width="300px"
           min-height="400px"
           class="rounded-lg mx-2 select-hover elevation-14 border-lg d-flex align-end"
         >
         </v-img>
-        <div class="d-flex px-1">
+        <div class="d-flex pl-2">
           <div style="max-width: 80%">
             <h1 class="mb-n2 ml-2 primary--text">
               {{ movie ? movie.title : `` }}

@@ -77,6 +77,10 @@ export default {
       }
     },
   },
+  created() {
+    if (!localStorage.getItem("user") && !this.$route.path != "sign-up") {
+      this.$router.push("/sign-in");
+    }
+  },
 };
 </script>
-
