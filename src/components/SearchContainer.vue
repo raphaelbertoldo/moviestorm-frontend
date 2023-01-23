@@ -9,7 +9,7 @@
       item-value="id"
       v-model="search"
       append-icon="mdi-magnify"
-      color="red lighten-1"
+      color="primary lighten-1"
       class="black ml-2"
       :no-data-text="
         query
@@ -47,6 +47,7 @@
 
 <script>
 import { SEARCH_MOVIE } from "@/graphql/queries";
+
 export default {
   name: "SearchContainer",
   data: () => ({
@@ -84,7 +85,6 @@ export default {
       } else {
         this.loading = false;
         console.log("else");
-        return;
       }
     },
   },
@@ -102,4 +102,3 @@ export default {
   transform: none !important;
 }
 </style>
-

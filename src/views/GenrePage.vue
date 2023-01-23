@@ -39,7 +39,8 @@ export default {
         })
         .then(({ data }) => {
           data;
-          console.log("🚀 ~ file: GenrePage.vue:61 ~ .then ~ data", data)
+          console.log("🚀 ~ file: GenrePage.vue:61 ~ .then ~ data>>>>", data);
+          this.genre = data.genres[0].name.toLowerCase();
 
           if (this.user) {
             this.movies = data.genres[0].movies.map((movie) => {
@@ -61,11 +62,11 @@ export default {
         });
     },
     getUser() {
-        console.log("getUser");
-        this.$apollo
-          .query({
-            query: GET_USER,
-            variables: {
+      console.log("getUser");
+      this.$apollo
+        .query({
+          query: GET_USER,
+          variables: {
             username: localStorage.user,
             where: {
               username: localStorage.user,
@@ -73,21 +74,21 @@ export default {
           },
           fetchPolicy: "network-only",
           update: (store) => {
-        store.writeQuery({ 
-          query: GET_USER,
-          variables: {
-            username: localStorage.user,
-            where: {
-              username: localStorage.user,
-            },
-          },})
-      },
-
-        }) 
+            store.writeQuery({
+              query: GET_USER,
+              variables: {
+                username: localStorage.user,
+                where: {
+                  username: localStorage.user,
+                },
+              },
+            });
+          },
+        })
         .then(({ data }) => {
           this.getMovies();
           this.user = data.users[0];
-         console.log( this.$apollo)
+          console.log(this.$apollo);
         });
     },
   },
@@ -103,5 +104,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

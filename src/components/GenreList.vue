@@ -46,10 +46,27 @@ export default {
       this.$apollo
         .query({
           query: GET_GENRES,
+          variables: {
+            options: {
+              sort: [
+                {
+                  name,
+                },
+              ],
+            },
+          },
         })
         .then(({ data }) => {
           this.loading = false;
-          this.genres = data.genres;
+          this.genres = data.genres.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          });
         });
     },
   },
@@ -65,5 +82,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

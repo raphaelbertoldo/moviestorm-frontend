@@ -14,9 +14,9 @@
             :class="{ 'list__item--selected  border-1': selected === index }"
             @click="handleSelected(item, index)"
           >
-            <v-list-item-title class="pointer">{{
-              item.title
-            }}</v-list-item-title>
+            <v-list-item-title class="pointer">
+              {{ item.title }}
+            </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-col>
@@ -26,14 +26,14 @@
           <v-text-field
             flat
             v-model="form.name"
-            placeholder="name"
-            label="name"
+            placeholder="Nome"
+            label="Nome"
             outlined
           />
           <v-text-field
             v-model="form.username"
-            placeholder="username"
-            label="username"
+            placeholder="Nome de usuàrio"
+            label="Nome de usuàrio"
             outlined
           />
           <div class="d-flex align-end justify-end">

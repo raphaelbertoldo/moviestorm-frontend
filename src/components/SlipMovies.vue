@@ -1,23 +1,20 @@
 <template>
   <div class="">
     <p class="title">{{ title }}</p>
-    
-    <div
-    class="d-flex pa-4 border-lg justify-space-between"
-    :class="grid ? 'border-1' : 'border-1'"
-    >
-    <div v-if="!grid" class="d-flex align-center pointer" @click="scrollLeft">
-      <v-icon>mdi-chevron-left</v-icon>
-    </div>
-    <div
-    ref="customScroll"
-    :class="
+
+    <div class="d-flex pa-4 border-1 border-lg justify-space-between">
+      <div v-if="!grid" class="d-flex align-center pointer" @click="scrollLeft">
+        <v-icon>mdi-chevron-left</v-icon>
+      </div>
+      <div
+        ref="customScroll"
+        :class="
           grid
-          ? 'flex align-content-start flex-wrap d-flex mx-4 purple '
-          : 'flex mx-4 d-flex custom-scroll set-scroll'
-          "
+            ? 'flex align-content-start flex-wrap d-flex mx-4'
+            : 'flex mx-4 d-flex custom-scroll set-scroll'
+        "
       >
-      <div v-for="(movie, m) in movies" :key="m" class="my-4">
+        <div v-for="(movie, m) in movies" :key="m" class="my-4">
           <v-card
             class="mx-2 border-lg select-hover"
             @mouseover="setActiveMovie(m)"
@@ -29,12 +26,13 @@
                 'https://media.comicbook.com/files/img/default-movie.png?auto=webp'
               "
               :min-width="grid ? '200px' : '220px'"
-              class="elevation-14 border-lg d-flex align-end"
+              class="elevation-14 border-lg d-flex align-end contain poster"
             >
               <div v-if="loading" class="d-flex justify-center mt-16"></div>
               <div
                 class="d-flex gradient-transp flex align-end px-1"
-                style="min-height: 180px; width: 100%">
+                style="min-height: 180px; width: 100%"
+              >
                 <div class="" style="min-width: 100%">
                   <p
                     class="title pointer"
@@ -50,7 +48,6 @@
                     <p
                       class="primary rounded-lg pa-1 font-weight-medium"
                       style="font-size: 10pt; color: black"
-                      
                     >
                       {{
                         movie.node ? movie.node.genre.name : movie.genre.name
@@ -102,10 +99,9 @@ export default {
   props: ["movies", "title", "type", "grid"],
   methods: {
     likeMovie(rating, id) {
-     
       this.loading = true;
-      if (this.type === "favorites" ) {
-        console.log(`likeMovie`)
+      if (this.type === "favorites") {
+        console.log(`likeMovie`);
         this.$apollo
           .mutate({
             mutation: UPDATE_USER,
@@ -130,7 +126,7 @@ export default {
           .then(({ data }) => {
             data;
             console.log("🚀 ~ file: SlipMovies.vue:124 ~ .then ~ data", data);
-        console.log("getUser");
+            console.log("getUser");
             this.$emit("getMovies");
             this.$emit("getUser");
             this.newRating = rating;

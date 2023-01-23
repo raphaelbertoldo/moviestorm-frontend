@@ -75,8 +75,8 @@ export const GET_MOVIE = gql`
 `;
 
 export const GET_MOVIE_GENRE = gql`
-  query Genre($where: GenreWhere) {
-    genres(where: $where) {
+  query Genre($where: GenreWhere, $options: GenreOptions) {
+    genres(where: $where, options: $options) {
       name
       movies {
         id

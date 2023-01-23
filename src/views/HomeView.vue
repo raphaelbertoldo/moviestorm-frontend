@@ -80,30 +80,34 @@ export default {
           data;
 
           if (this.user) {
-            this.movies = data.movies.map((movie) => {
-              for (
-                let i = 0;
-                i < this.user.ratedsConnection.edges.length;
-                i++
-              ) {
-                if (this.user.ratedsConnection.edges[i].node.id === movie.id) {
-                  movie.rating = this.user.ratedsConnection.edges[i].rating;
-                  break;
+            this.movies = data.movies
+              .map((movie) => {
+                for (
+                  let i = 0;
+                  i < this.user.ratedsConnection.edges.length;
+                  i++
+                ) {
+                  if (
+                    this.user.ratedsConnection.edges[i].node.id === movie.id
+                  ) {
+                    movie.rating = this.user.ratedsConnection.edges[i].rating;
+                    break;
+                  }
                 }
-              }
-              return movie;
-            });
+                return movie;
+              })
+              .reverse();
 
             this.loading = false;
           }
         });
     },
     getUser() {
-        console.log("getUser");
-        this.$apollo
-          .query({
-            query: GET_USER,
-            variables: {
+      console.log("getUser");
+      this.$apollo
+        .query({
+          query: GET_USER,
+          variables: {
             username: localStorage.user,
             where: {
               username: localStorage.user,
@@ -111,21 +115,21 @@ export default {
           },
           fetchPolicy: "network-only",
           update: (store) => {
-        store.writeQuery({ 
-          query: GET_USER,
-          variables: {
-            username: localStorage.user,
-            where: {
-              username: localStorage.user,
-            },
-          },})
-      },
-
-        }) 
+            store.writeQuery({
+              query: GET_USER,
+              variables: {
+                username: localStorage.user,
+                where: {
+                  username: localStorage.user,
+                },
+              },
+            });
+          },
+        })
         .then(({ data }) => {
           this.getMovies();
           this.user = data.users[0];
-         console.log( this.$apollo)
+          console.log(this.$apollo);
         });
     },
   },
