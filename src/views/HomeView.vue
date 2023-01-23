@@ -3,6 +3,7 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
   <div v-else>
+    <CarouselMovies />
     <v-container dark class="">
       <div v-if="user && user.rateds.length > 0">
         <SlipMovies
@@ -36,6 +37,7 @@
 import gql from "graphql-tag";
 import SlipMovies from "../components/SlipMovies.vue";
 import { GET_USER } from "@/graphql/queries";
+import CarouselMovies from "@/components/CarouselMovies.vue";
 export default {
   name: "HomeView",
   data: () => ({
@@ -46,6 +48,7 @@ export default {
   }),
   components: {
     SlipMovies,
+    CarouselMovies,
   },
   apollo: {
     users: {

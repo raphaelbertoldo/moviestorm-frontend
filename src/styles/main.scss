@@ -30,6 +30,22 @@ a {
     rgba(255, 255, 255, 0) 100%
   );
 }
+.gradient-transp-1 {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgb(0, 0, 0) 0%,
+    rgba(255, 255, 255, 0) 33%
+  );
+}
+.gradient-transp-2 {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 0) 0%,
+    rgba(255, 255, 255, 0) 33%
+  );
+}
 
 .pointer {
   cursor: pointer;
