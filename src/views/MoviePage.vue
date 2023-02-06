@@ -3,6 +3,7 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
   <v-container v-else class="">
+    <v-btn @click="handleTesterrrs">teste</v-btn>
     <!-- <pre>{{ movie }}</pre> -->
     <div class="d-flex align-center pointer" @click="$router.push('/')">
       <v-icon>mdi-chevron-left</v-icon>
@@ -114,6 +115,7 @@ import TitleInfo from "@/components/TitleInfo.vue";
 import SlipMovies from "@/components/SlipMovies.vue";
 import RateMovie from "@/components/RateMovie.vue";
 import { UPDATE_USER } from "@/graphql/mutations";
+import Bugsnag from "@bugsnag/browser";
 export default {
   components: {
     TitleInfo,
@@ -132,6 +134,11 @@ export default {
     id: String,
   },
   methods: {
+    handleTesterrrs() {
+      this.handleTesting();
+      console.log(`ok`);
+      Bugsnag.notify(new Error("Test error"));
+    },
     likeMovie(rating, id) {
       if (this.movie && this.movie.rating) {
         this.$apollo
