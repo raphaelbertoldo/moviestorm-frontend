@@ -15,7 +15,7 @@
     <span type="text--caption">{{ rating }}</span>
   </div>
 </template>
-
+TESTESESTESTESTESTESTESTETSTETSTE
 <script>
 export default {
   name: "RateMovie",
