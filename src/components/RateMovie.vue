@@ -15,7 +15,6 @@
     <span type="text--caption">{{ rating }}</span>
   </div>
 </template>
-TESTE DE BRANCH
 
 <script>
 export default {
