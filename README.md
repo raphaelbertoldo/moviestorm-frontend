@@ -1,4 +1,4 @@
-# moviestorm-front-end
+# moviestorm-frontend
 
 ## Project setup
 
