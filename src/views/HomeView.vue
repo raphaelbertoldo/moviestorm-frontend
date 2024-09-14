@@ -3,7 +3,21 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
   <div v-else>
-    <CarouselMovies />
+    <div>
+      <CarouselMovies
+        :items="
+          movies.map((m) => {
+            return {
+              src: m.bgPoster,
+              title: m.title,
+              plot: m.plot,
+              year: m.year,
+              gender: m.gender,
+            };
+          })
+        "
+      />
+    </div>
     <v-container dark class="">
       <div v-if="user && user.rateds.length > 0">
         <SlipMovies
@@ -70,7 +84,9 @@ export default {
               movies {
                 id
                 poster
+                bgPoster
                 title
+                plot
                 year
                 genre {
                   name
@@ -145,15 +161,9 @@ export default {
       return this.movies;
     },
   },
-  watch: {
-    $route: function () {
-      this.getMovies();
-      // this.getUser();
-    },
-    movies: function () {
-      // this.getMovies();
-      // this.getUser();
-    },
-  },
 };
 </script>
+<style></style>
+<!-- .banner_container {
+  height: inherit;
+} -->

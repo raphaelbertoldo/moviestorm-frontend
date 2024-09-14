@@ -46,6 +46,7 @@ export const GET_MOVIE = gql`
     movies(where: $where) {
       id
       poster
+      bgPoster
       plot
       title
       year
