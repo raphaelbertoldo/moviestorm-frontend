@@ -19,8 +19,8 @@ const AUTH_TOKEN = "apollo-token";
 const httpEndpoint =
   process.env.VUE_APP_GRAPHQL_HTTP ||
   // "https://trilha-gvand-stack-graphql-api.vercel.app/graphql";
-  "https://gvand-backend-production.up.railway.app/graphql";
-// "http://localhost:4000/graphql";
+  // "https://graphs-movies-db.vercel.app/graphql";
+  "http://localhost:4000/graphql";
 
 // Config
 const defaultOptions = {
@@ -38,7 +38,6 @@ const defaultOptions = {
   websocketsOnly: false,
   // Is being rendered on the server?
   ssr: false,
-
   // Override default apollo link
   // note: don't override httpLink here, specify httpLink options in the
   // httpLinkOptions property of defaultOptions.

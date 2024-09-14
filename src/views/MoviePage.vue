@@ -3,7 +3,7 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
   <v-container v-else class="">
-    <v-btn @click="handleTesterrrs">teste</v-btn>
+    <!-- <v-btn @click="handleTesterrrs">teste</v-btn> -->
     <!-- <pre>{{ movie }}</pre> -->
     <div class="d-flex align-center pointer" @click="$router.push('/')">
       <v-icon>mdi-chevron-left</v-icon>
@@ -67,7 +67,7 @@
                 />
                 <TitleInfo
                   title="Diretor"
-                  :subtitle="movie ? movie.director.name : ''"
+                  :subtitle="movie ? movie?.director?.name : ''"
                 />
               </div>
               <div>
@@ -115,7 +115,6 @@ import TitleInfo from "@/components/TitleInfo.vue";
 import SlipMovies from "@/components/SlipMovies.vue";
 import RateMovie from "@/components/RateMovie.vue";
 import { UPDATE_USER } from "@/graphql/mutations";
-import Bugsnag from "@bugsnag/browser";
 export default {
   components: {
     TitleInfo,
@@ -134,11 +133,6 @@ export default {
     id: String,
   },
   methods: {
-    handleTesterrrs() {
-      this.handleTesting();
-      console.log(`ok`);
-      Bugsnag.notify(new Error("Test error"));
-    },
     likeMovie(rating, id) {
       if (this.movie && this.movie.rating) {
         this.$apollo
@@ -194,7 +188,6 @@ export default {
           })
           .then(({ data }) => {
             data;
-            console.log("🚀 ~ file: SlipMovies.vue:124 ~ .then ~ data", data);
             this.$emit("getUser");
             this.$emit("getMovies");
             this.newRating = rating;
@@ -218,10 +211,6 @@ export default {
           if (this.user) {
             const movieObj = data.movies[0];
             const similiarMoviesObj = data.movies[0].similarMovies;
-            console.log(
-              "🚀 ~ file: MoviePage.vue:227 ~ .then ~ similiarMoviesObj",
-              similiarMoviesObj
-            );
 
             this.similiarMovies = similiarMoviesObj.map((movie) => {
               for (
@@ -245,30 +234,8 @@ export default {
             this.movie = movieObj;
             this.similiarMovies = similiarMoviesObj;
 
-            console.log(
-              "🚀 ~ file: MoviePage.vue:154 ~ .then ~ movie",
-              this.movie
-            );
             this.loading = false;
           }
-
-          // if (this.user) {
-          //   this.movies = data.movies.map((movie) => {
-          //     for (
-          //       let i = 0;
-          //       i < this.user.ratedsConnection.edges.length;
-          //       i++
-          //     ) {
-          //       if (this.user.ratedsConnection.edges[i].node.id === movie.id) {
-          //         movie.rating = this.user.ratedsConnection.edges[i].rating;
-          //         break;
-          //       }
-          //     }
-          //     return movie;
-          //   });
-
-          //   this.loading = false;
-          // }
         });
     },
     getUser() {

@@ -31,10 +31,8 @@ export default {
       this.$apollo
         .query({
           query: GET_MOVIE_GENRE,
-          variables: {
-            where: {
-              id: this.$route.params.id,
-            },
+          where: {
+            id: this.$route.params.id,
           },
         })
         .then(({ data }) => {
