@@ -19,8 +19,8 @@ const AUTH_TOKEN = "apollo-token";
 const httpEndpoint =
   process.env.VUE_APP_GRAPHQL_HTTP ||
   // "https://trilha-gvand-stack-graphql-api.vercel.app/graphql";
-  // "https://graphs-movies-db.vercel.app/graphql";
-  "http://localhost:4000/graphql";
+  "https://graphs-movies-db.vercel.app/graphql";
+// "http://localhost:4000/graphql";
 
 // Config
 const defaultOptions = {
