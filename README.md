@@ -7,14 +7,20 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-  <p align="center">
+<p align="center">
     <br />
-    <a href="https://movie-storm.netlify.app/">View Demo</a>
-    ·
-    <a href="https://github.com/raphaelbertoldo/moviestorm-frontend/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/raphaelbertoldo/moviestorm-frontend/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    <a href="https://movie-storm.netlify.app/">
+        <img src="https://img.shields.io/badge/-▶️_View_Demo-4CAF50?style=for-the-badge" alt="▶️ View Demo">
+    </a>
+    <a href="https://github.com/raphaelbertoldo/moviestorm-frontend/issues/new?labels=bug&template=bug-report---.md">
+        <img src="https://img.shields.io/badge/-🐛_Report_Bug-FF6347?style=for-the-badge" alt="🐛 Report Bug"> 
+    </a>
+    <a href="https://github.com/raphaelbertoldo/moviestorm-frontend/issues/new?labels=enhancement&template=feature-request---.md">
+        <img src="https://img.shields.io/badge/-💡_Request_Feature-4682B4?style=for-the-badge" alt="Request Feature"> 
+    </a>
+</p>
+
+
 
 ## About The Project
 
