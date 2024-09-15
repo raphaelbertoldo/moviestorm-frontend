@@ -124,7 +124,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [contributors-url]: https://github.com/raphaelbertoldo/moviestorm-frontend/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/raphaelbertoldo/moviestorm-frontend.svg?style=for-the-badge
 [forks-url]: https://github.com/raphaelbertoldo/moviestorm-frontend/network/members
-[stars-shield]: https://img.shields.io/github/stars/raphaelbertoldo/moviestorm-frontend.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/raphaelbertoldo/moviestorm-frontend?style=for-the-badge
 [stars-url]: https://github.com/raphaelbertoldo/moviestorm-frontend/stargazers
 [issues-shield]: https://img.shields.io/github/issues/raphaelbertoldo/moviestorm-frontend.svg?style=for-the-badge
 [issues-url]: https://github.com/raphaelbertoldo/moviestorm-frontend/issues
