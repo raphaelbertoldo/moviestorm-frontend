@@ -33,8 +33,6 @@
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [![Vue][Vue.js]][Vue-url]
 * [![VueApollo][Apollo]][Apollo-url]
 * [![JavaScript][JavaScript]][JavaScript-url]
